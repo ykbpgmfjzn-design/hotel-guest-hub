@@ -14,8 +14,8 @@ const actions: QuickAction[] = [
 ];
 
 const externalLinks: QuickAction[] = [
-  { icon: ExternalLink, label: "Lounge Menu", href: "LOUNGE_URL_PLACEHOLDER" },
-  { icon: ExternalLink, label: "Shisha Menu", href: "SHISHA_URL_PLACEHOLDER" },
+  { icon: ExternalLink, label: "Lounge Menu", href: "https://umalaslounge.com" },
+  { icon: ExternalLink, label: "Shisha Menu", href: "https://shisha.cool" },
 ];
 
 export function QuickActions() {
