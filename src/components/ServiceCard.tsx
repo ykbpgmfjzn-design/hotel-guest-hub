@@ -17,28 +17,31 @@ export function ServiceCard({ service, onClick, index }: ServiceCardProps) {
   return (
     <button
       onClick={() => onClick(service)}
-      className="group relative flex flex-col items-start gap-4 rounded-lg border border-border bg-card-gradient p-6 text-left transition-all duration-300 hover:border-gold/30 hover:shadow-gold animate-slide-up"
-      style={{ animationDelay: `${index * 80}ms`, animationFillMode: "backwards" }}
+      className="group relative flex flex-col items-start gap-4 rounded-sm border border-border bg-card-gradient p-6 text-left transition-all duration-500 hover:border-gold/25 hover:shadow-gold animate-slide-up"
+      style={{ animationDelay: `${index * 100}ms`, animationFillMode: "backwards" }}
     >
+      {/* Gold accent line top */}
+      <div className="absolute left-0 top-0 h-px w-0 bg-gradient-to-r from-gold to-transparent transition-all duration-500 group-hover:w-full" />
+
       {/* Icon */}
-      <div className="flex h-12 w-12 items-center justify-center rounded-md border border-border bg-muted transition-colors duration-300 group-hover:border-gold/40 group-hover:bg-accent">
-        <Icon className="h-5 w-5 text-gold transition-transform duration-300 group-hover:scale-110" />
+      <div className="flex h-11 w-11 items-center justify-center rounded-sm border border-border bg-muted/50 transition-all duration-500 group-hover:border-gold/30 group-hover:bg-gold-muted/30">
+        <Icon className="h-5 w-5 text-gold transition-transform duration-500 group-hover:scale-110" />
       </div>
 
       {/* Text */}
       <div>
-        <h3 className="font-display text-lg font-semibold text-foreground transition-colors group-hover:text-gold">
+        <h3 className="font-display text-lg font-semibold tracking-wide text-foreground transition-colors group-hover:text-gold">
           {service.title}
         </h3>
-        <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+        <p className="mt-1.5 text-[13px] leading-relaxed text-muted-foreground">
           {service.description}
         </p>
       </div>
 
-      {/* Arrow hint */}
-      <div className="absolute bottom-6 right-6 text-muted-foreground opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 -translate-x-1">
+      {/* Arrow */}
+      <span className="absolute bottom-5 right-5 text-sm text-gold opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 -translate-x-2">
         →
-      </div>
+      </span>
     </button>
   );
 }
