@@ -4,6 +4,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { ServiceDetail } from "@/components/ServiceDetail";
 import { QuickActions } from "@/components/QuickActions";
 import { HotelMap } from "@/components/HotelMap";
+import { AmbientVideo } from "@/components/AmbientVideo";
 import { mockGuest, hotelServices, HotelService } from "@/data/hotelData";
 
 const Index = () => {
@@ -41,6 +42,9 @@ const Index = () => {
           ))}
         </div>
       </section>
+
+      {/* Ambient Video */}
+      <AmbientVideo />
 
       {/* Hotel Map */}
       <HotelMap />
