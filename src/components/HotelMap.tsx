@@ -8,13 +8,12 @@ export function HotelMap() {
   const selectedLocation = mapLocations.find((l) => l.id === selected);
 
   return (
-    <section className="px-8 py-8 lg:px-16">
-      <h2 className="mb-5 font-display text-xl font-semibold tracking-wide text-foreground">
+    <div>
+      <h2 className="mb-5 font-display text-xl font-semibold tracking-wide text-foreground xl:text-2xl">
         Property Map
       </h2>
 
       <div className="grid gap-5 lg:grid-cols-3">
-        {/* Map */}
         <div className="relative col-span-2 overflow-hidden rounded-sm border border-border">
           <img src={hotelMap} alt="Hotel floor plan" className="h-full w-full object-cover" />
           {mapLocations.map((loc) => (
@@ -34,7 +33,6 @@ export function HotelMap() {
           ))}
         </div>
 
-        {/* Location list */}
         <div className="flex flex-col gap-2">
           {mapLocations.map((loc) => (
             <button
@@ -51,9 +49,7 @@ export function HotelMap() {
                 <p className={`text-sm font-medium tracking-wide ${selected === loc.id ? "text-gold" : "text-foreground"}`}>
                   {loc.name}
                 </p>
-                <p className="text-xs text-muted-foreground">
-                  {loc.floor} · {loc.description}
-                </p>
+                <p className="text-xs text-muted-foreground">{loc.floor} · {loc.description}</p>
               </div>
             </button>
           ))}
@@ -64,16 +60,12 @@ export function HotelMap() {
         <div className="mt-4 rounded-sm border border-gold/15 bg-card-gradient p-4 animate-fade-in">
           <div className="flex items-center gap-2">
             <MapPin className="h-4 w-4 text-gold" />
-            <span className="font-display font-semibold tracking-wide text-foreground">
-              {selectedLocation.name}
-            </span>
-            <span className="rounded-sm bg-muted px-2 py-0.5 text-xs text-muted-foreground">
-              {selectedLocation.floor}
-            </span>
+            <span className="font-display font-semibold tracking-wide text-foreground">{selectedLocation.name}</span>
+            <span className="rounded-sm bg-muted px-2 py-0.5 text-xs text-muted-foreground">{selectedLocation.floor}</span>
           </div>
           <p className="mt-1 text-sm text-muted-foreground">{selectedLocation.description}</p>
         </div>
       )}
-    </section>
+    </div>
   );
 }
