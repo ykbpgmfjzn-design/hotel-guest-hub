@@ -35,13 +35,15 @@ export function AmbientVideo() {
         <div className="flex gap-2">
           <button
             onClick={toggleMute}
-            className="flex h-8 w-8 items-center justify-center rounded-sm border border-border bg-background/60 text-foreground backdrop-blur-sm transition-colors hover:border-gold/30 hover:text-gold"
+            data-tv-focusable
+            className="flex h-8 w-8 items-center justify-center rounded-sm border border-border bg-background/60 text-foreground backdrop-blur-sm transition-colors hover:border-gold/30 hover:text-gold focus:outline-none"
           >
             {muted ? <VolumeX className="h-3.5 w-3.5" /> : <Volume2 className="h-3.5 w-3.5" />}
           </button>
           <button
             onClick={toggleFullscreen}
-            className="flex h-8 w-8 items-center justify-center rounded-sm border border-border bg-background/60 text-foreground backdrop-blur-sm transition-colors hover:border-gold/30 hover:text-gold"
+            data-tv-focusable
+            className="flex h-8 w-8 items-center justify-center rounded-sm border border-border bg-background/60 text-foreground backdrop-blur-sm transition-colors hover:border-gold/30 hover:text-gold focus:outline-none"
           >
             <Maximize2 className="h-3.5 w-3.5" />
           </button>

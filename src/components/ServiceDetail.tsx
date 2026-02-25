@@ -20,7 +20,9 @@ export function ServiceDetail({ service, onBack }: ServiceDetailProps) {
       <div className="mb-10 flex items-center justify-between">
         <button
           onClick={onBack}
-          className="flex items-center gap-2 text-sm tracking-wide text-muted-foreground transition-colors hover:text-gold"
+          data-tv-focusable
+          data-tv-back
+          className="flex items-center gap-2 text-sm tracking-wide text-muted-foreground transition-colors hover:text-gold focus:outline-none"
         >
           <ArrowLeft className="h-4 w-4" />
           Back
@@ -48,7 +50,9 @@ export function ServiceDetail({ service, onBack }: ServiceDetailProps) {
         {service.items?.map((item, i) => (
           <div
             key={item.id}
-            className="flex items-start justify-between rounded-sm border border-border bg-card-gradient p-5 transition-all duration-400 hover:border-gold/15 animate-slide-up"
+            data-tv-focusable
+            tabIndex={0}
+            className="flex items-start justify-between rounded-sm border border-border bg-card-gradient p-5 transition-all duration-400 hover:border-gold/15 animate-slide-up focus:outline-none"
             style={{ animationDelay: `${i * 80}ms`, animationFillMode: "backwards" }}
           >
             <div className="flex-1">
@@ -68,7 +72,7 @@ export function ServiceDetail({ service, onBack }: ServiceDetailProps) {
 
       {/* CTA */}
       <div className="mt-10">
-        <button className="rounded-sm bg-primary px-10 py-3 font-body text-sm font-medium tracking-wider text-primary-foreground uppercase transition-all duration-300 hover:brightness-110 shadow-gold">
+        <button data-tv-focusable className="rounded-sm bg-primary px-10 py-3 font-body text-sm font-medium tracking-wider text-primary-foreground uppercase transition-all duration-300 hover:brightness-110 shadow-gold focus:outline-none">
           Request / Order
         </button>
       </div>
