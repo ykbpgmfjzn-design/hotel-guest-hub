@@ -33,36 +33,32 @@ const Index = () => {
         <WelcomeHero guest={mockGuest} />
 
         {/* Main content area */}
-        <div className="flex flex-1 flex-col px-12 py-6 lg:px-20 xl:px-28">
-          {/* Two-column layout: Quick Actions (left narrow) + Services (right wide) */}
-          <div className="grid flex-1 gap-6 lg:grid-cols-12">
-            {/* Left: Quick Actions */}
-            <div className="lg:col-span-3 flex flex-col">
-              <h2 className="mb-3 font-display text-sm font-semibold tracking-[0.2em] text-muted-foreground uppercase xl:text-base">
-                Quick Actions
-              </h2>
-              <QuickActions />
-            </div>
+        <div className="flex flex-1 flex-col px-12 py-4 lg:px-20 xl:px-28">
+          {/* Quick Actions — full width row */}
+          <div className="mb-4">
+            <h2 className="mb-3 font-display text-sm font-semibold tracking-[0.2em] text-muted-foreground uppercase xl:text-base">
+              Quick Actions
+            </h2>
+            <QuickActions />
+          </div>
 
-            {/* Right: Services grid */}
-            <div className="lg:col-span-9 flex flex-col">
-              <h2 className="mb-3 font-display text-sm font-semibold tracking-[0.2em] text-muted-foreground uppercase xl:text-base">
-                Services
-              </h2>
-              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {hotelServices.map((service, i) => (
-                  <ServiceCard
-                    key={service.id}
-                    service={service}
-                    onClick={setActiveService}
-                    index={i}
-                  />
-                ))}
-              </div>
+          {/* Services grid — 2 columns for TV */}
+          <div className="flex-1">
+            <h2 className="mb-3 font-display text-sm font-semibold tracking-[0.2em] text-muted-foreground uppercase xl:text-base">
+              Services
+            </h2>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2 xl:gap-5">
+              {hotelServices.map((service, i) => (
+                <ServiceCard
+                  key={service.id}
+                  service={service}
+                  onClick={setActiveService}
+                  index={i}
+                />
+              ))}
             </div>
           </div>
 
-          {/* Scroll indicator at the very bottom */}
           <ScrollIndicator />
         </div>
       </div>
