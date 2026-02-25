@@ -17,18 +17,14 @@ export function ServiceCard({ service, onClick, index }: ServiceCardProps) {
   return (
     <button
       onClick={() => onClick(service)}
-      className="group relative flex items-center gap-4 rounded-sm border border-border bg-card-gradient p-4 text-left transition-all duration-500 hover:border-gold/25 hover:shadow-gold animate-slide-up xl:p-5"
+      data-tv-focusable
+      className="group relative flex items-center gap-4 rounded-sm border border-border bg-card-gradient p-4 text-left transition-all duration-500 hover:border-gold/25 hover:shadow-gold animate-slide-up xl:p-5 focus:outline-none"
       style={{ animationDelay: `${index * 80}ms`, animationFillMode: "backwards" }}
     >
-      {/* Gold accent line left */}
       <div className="absolute left-0 top-0 h-0 w-px bg-gradient-to-b from-gold to-transparent transition-all duration-500 group-hover:h-full" />
-
-      {/* Icon */}
       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-sm border border-border bg-muted/50 transition-all duration-500 group-hover:border-gold/30 group-hover:bg-gold-muted/30 xl:h-12 xl:w-12">
         <Icon className="h-4 w-4 text-gold transition-transform duration-500 group-hover:scale-110 xl:h-5 xl:w-5" />
       </div>
-
-      {/* Text */}
       <div className="flex-1 min-w-0">
         <h3 className="font-display text-base font-semibold tracking-wide text-foreground transition-colors group-hover:text-gold xl:text-lg">
           {service.title}
@@ -37,8 +33,6 @@ export function ServiceCard({ service, onClick, index }: ServiceCardProps) {
           {service.description}
         </p>
       </div>
-
-      {/* Arrow */}
       <span className="shrink-0 text-sm text-gold opacity-0 transition-all duration-500 group-hover:opacity-100">
         →
       </span>

@@ -19,8 +19,9 @@ export function HotelMap() {
           {mapLocations.map((loc) => (
             <button
               key={loc.id}
+              data-tv-focusable
               onClick={() => setSelected(loc.id)}
-              className={`absolute flex h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border transition-all duration-300 ${
+              className={`absolute flex h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border transition-all duration-300 focus:outline-none ${
                 selected === loc.id
                   ? "border-gold bg-gold scale-125"
                   : "border-gold/40 bg-background/70 hover:border-gold hover:scale-110"
@@ -37,8 +38,9 @@ export function HotelMap() {
           {mapLocations.map((loc) => (
             <button
               key={loc.id}
+              data-tv-focusable
               onClick={() => setSelected(loc.id)}
-              className={`flex items-start gap-3 rounded-sm border p-3 text-left transition-all duration-300 ${
+              className={`flex items-start gap-3 rounded-sm border p-3 text-left transition-all duration-300 focus:outline-none ${
                 selected === loc.id
                   ? "border-gold/30 bg-gold-muted/20 shadow-gold"
                   : "border-border bg-card-gradient hover:border-gold/15"

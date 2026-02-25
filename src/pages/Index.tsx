@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAutoScroll } from "@/hooks/useAutoScroll";
+import { useTvNavigation } from "@/hooks/useTvNavigation";
 import { WelcomeHero } from "@/components/WelcomeHero";
 import { ServiceCard } from "@/components/ServiceCard";
 import { ServiceDetail } from "@/components/ServiceDetail";
@@ -13,6 +14,7 @@ import magnumLogo from "@/assets/magnum-logo.png";
 const Index = () => {
   const [activeService, setActiveService] = useState<HotelService | null>(null);
   useAutoScroll(30000, 1.2);
+  useTvNavigation();
 
   if (activeService) {
     return (
