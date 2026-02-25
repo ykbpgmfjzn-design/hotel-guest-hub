@@ -8,13 +8,12 @@ export default {
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      screens: { "2xl": "1400px" },
     },
     extend: {
       fontFamily: {
-        display: ["Playfair Display", "serif"],
+        display: ["Cormorant Garamond", "serif"],
+        heading: ["Playfair Display", "serif"],
         body: ["Inter", "sans-serif"],
       },
       colors: {
@@ -27,6 +26,7 @@ export default {
           DEFAULT: "hsl(var(--gold))",
           light: "hsl(var(--gold-light))",
           dark: "hsl(var(--gold-dark))",
+          muted: "hsl(var(--gold-muted))",
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",
